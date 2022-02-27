@@ -94,6 +94,13 @@ body {
 }
 
 /* main */
+.game-container {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+  gap: 32px;
+  place-items: center;
+}
+
 .game-card {
   background-color: #e5e5e5;
   height: 350px;
@@ -102,7 +109,7 @@ body {
 }
 
 .game-card figure {
-  background-image: url('https://www.gamerpower.com/offers/1/5ec4fdb8dbe80.jpg');
+  /* background-image: url('https://www.gamerpower.com/offers/1/5ec4fdb8dbe80.jpg'); */
   height: 50%;
   background-position: center;
   background-size: cover;

@@ -12,6 +12,9 @@
   <!-- css -->
   <link rel="stylesheet" href="./styles/style.css">
 
+  <!-- js -->
+  <script type="module" src="./scripts/app.js"></script>
+
 </head>
 <body>
   <!-- https://www.gamerpower.com/offers/1/5ec4fdb8dbe80.jpg -->
@@ -24,10 +27,10 @@
   </header>
 
   <main class="container">
-    <section class="flex-center">
-      <div class="game-container">
+    <section class="">
+      <div id="game-container" class="game-container">
         <div class="game-card">
-          <figure>
+          <figure style="background-image: url('https://www.gamerpower.com/offers/1/5ec4fdb8dbe80.jpg');">
           </figure>
           <div class="details flex-center">
             <div class="platform flex-between gap-24">
@@ -49,7 +52,5 @@
       </div>
     </section>
   </main>
-  <!-- js -->
-  <script src="./scripts/app.js"></script>
 </body>
 </html>
