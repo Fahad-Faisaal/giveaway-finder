@@ -93,6 +93,13 @@ body {
   outline: none;
 }
 
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
 /* main */
 .game-container {
   display: grid;
@@ -103,7 +110,7 @@ body {
 
 .game-card {
   background-color: #e5e5e5;
-  height: 350px;
+  height: 480px;
   width: 300px;
   border-radius: 12px;
 }
@@ -118,12 +125,39 @@ body {
   border-top-right-radius: 12px;
 }
 
+ .game-card .details {
+  height: 20%;
+}
+
+.game-card .button-container {
+  height: 10%;
+}
+
+.game-card-title {
+  margin-top: 8px;
+  height: 10%;
+}
+
 
 .details {
   margin-top: 24px;
   padding: 0 16px;
-  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
   gap: 24px;
+}
+
+.platform {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .gap-24 {
