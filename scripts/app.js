@@ -4,7 +4,7 @@ import apiKey from "./test.js";
 
 // displaying games
 const displayPopularGames = game => {
-  console.log(game);
+  // console.log(game);
   const gameContainer = document.getElementById('game-container');
 
 	game.forEach(game => {
@@ -39,11 +39,56 @@ const displayPopularGames = game => {
 	})
 }
 
+// displaying giveaway
+const displayGiveAway = game => {
+  const giveawayDetailContainer = document.getElementById('giveaway-detail-section');
+  const gameDetail = document.createElement('div');
+  gameDetail.classList.add('giveaway-detail-container');
+
+  gameDetail.innerHTML = `
+    <figure class="giveaway-detail-photo">
+      <img src=${game.image} alt="">
+    </figure>
+    <div class="detail-description">
+      <h1 class="main-title">${game.title}</h1>
+      <p class="giveaway-description focused-text">${game.description}</p>
+      <p class="instruction">${game.instructions}</p>
+      <div>
+        <button id="btn-go" class="btn"><a href=${game.open_giveaway_url}>Go to Giveaway Link</a></button>
+      </div>
+    </div>
+  `;
+
+  giveawayDetailContainer.appendChild(gameDetail);
+
+  giveawayDetailContainer.scrollIntoView({
+    behavior: 'smooth',
+  })
+
+}
+
 // loading giveaway
 document.getElementById('game-container').addEventListener('click', function(e){
   if(!e.target.closest('button')) return
+
+  document.getElementById('giveaway-detail-section').textContent = '';
+
   const gameId = +e.target.dataset.gameid;
   // this.style.display = 'none';
+
+  fetch(`https://gamerpower.p.rapidapi.com/api/giveaway?id=${gameId}`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "gamerpower.p.rapidapi.com",
+		"x-rapidapi-key": `${apiKey}`
+	}
+})
+.then(response => response.json())
+.then(data => displayGiveAway(data))
+.catch(err => {
+	alert(err)
+});
+
 });
 
 
@@ -62,7 +107,7 @@ const loadPopularGames = async () => {
  displayPopularGames(data);
 };
 
-// loadPopularGames();
+loadPopularGames();
 
 // filtering
 document.getElementById('search-input').addEventListener('keyup', function(event){

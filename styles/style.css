@@ -199,6 +199,10 @@ body {
   color: #17181d;
 }
 
+.giveaway-detail-photo {
+  align-self: flex-start;
+}
+
 @media only screen and (max-width: 600px) {
   .main-title {
     font-size: 24px;
