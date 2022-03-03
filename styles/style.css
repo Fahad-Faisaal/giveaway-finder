@@ -172,3 +172,46 @@ body {
   height: 18px;
   width: 18px;
 }
+
+/* details */
+.giveaway-detail-container {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center; 
+}
+
+.giveaway-description {
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 16px;
+}
+
+.instruction {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+#btn-go {
+  margin-bottom: 20px;
+  color: #17181d;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-title {
+    font-size: 24px;
+  }
+  .giveaway-description {
+    font-size: 18px;
+  }
+  .instruction {
+    font-size: 16px;
+  }
+  .giveaway-detail-photo img{
+    width: 300px;
+  }
+}
+
+

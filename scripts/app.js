@@ -1,7 +1,10 @@
 import apiKey from "./test.js";
 
+// "https://www.gamerpower.com/offers/1b/60995c9cecca6.jpg"
+
 // displaying games
 const displayPopularGames = game => {
+  console.log(game);
   const gameContainer = document.getElementById('game-container');
 
 	game.forEach(game => {
@@ -40,7 +43,8 @@ const displayPopularGames = game => {
 document.getElementById('game-container').addEventListener('click', function(e){
   if(!e.target.closest('button')) return
   const gameId = +e.target.dataset.gameid;
-})
+  // this.style.display = 'none';
+});
 
 
 // loading games from api
@@ -58,7 +62,7 @@ const loadPopularGames = async () => {
  displayPopularGames(data);
 };
 
-loadPopularGames();
+// loadPopularGames();
 
 // filtering
 document.getElementById('search-input').addEventListener('keyup', function(event){
