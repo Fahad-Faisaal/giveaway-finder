@@ -28,13 +28,19 @@ const displayPopularGames = game => {
         
       </div>
       <div class="button-container flex-center">
-        <button class="btn">Get Giveaway</button>
+        <button class="btn" data-gameId="${game.id}">Get Giveaway</button>
       </div>
 		`
 
 		gameContainer.appendChild(gameCard)
 	})
 }
+
+// loading giveaway
+document.getElementById('game-container').addEventListener('click', function(e){
+  if(!e.target.closest('button')) return
+  const gameId = +e.target.dataset.gameid;
+})
 
 
 // loading games from api
