@@ -61,8 +61,9 @@ const displayGiveAway = game => {
 
   giveawayDetailContainer.appendChild(gameDetail);
 
-  giveawayDetailContainer.scrollIntoView({
+  document.getElementById('header').scrollIntoView({
     behavior: 'smooth',
+    inline: 'start'
   })
 
 }
@@ -111,6 +112,8 @@ loadPopularGames();
 
 // filtering
 document.getElementById('search-input').addEventListener('keyup', function(event){
+  document.getElementById('giveaway-detail-section').textContent = '';
+
   const currKey = event.target.value;
 
   const games = document.querySelectorAll('.game-card-title');
